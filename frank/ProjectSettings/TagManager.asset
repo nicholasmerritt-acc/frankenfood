@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - MoneyText
-  - EnemyBase
-  - AllyBase
+  - VictoryText
+  - Base
+  - Fighter
   layers:
   - Default
   - TransparentFX
