@@ -7,11 +7,18 @@ public class GameManager : MonoBehaviour
 
     public float money = 0;
     public float startingMoney = 0;
-    public TMP_Text moneyText;
-    public TMP_Text victoryText;
-    public TMP_Text popupText;
-    public EnemyBase enemyBase;
-    public AllyBase allyBase;
+
+    [SerializeField]
+    TMP_Text moneyText;
+
+    [SerializeField]
+    TMP_Text victoryText;
+
+    [SerializeField]
+    TMP_Text popupText;
+
+    EnemyBase enemyBase;
+    AllyBase allyBase;
 
     public int currentLevel = 1;
     public int hiscore = 0;
@@ -22,8 +29,14 @@ public class GameManager : MonoBehaviour
     {
         currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         LevelReset();
-        moneyText = GameObject.Find("MoneyText").GetComponent<TMP_Text>();
+        GameObject money = GameObject.FindWithTag("MoneyText");
+        moneyText = money.GetComponent<TMP_Text>();
         victoryText = GameObject.Find("VictoryText").GetComponent<TMP_Text>();
+        popupText = GameObject.Find("PopupText").GetComponent<TMP_Text>();
+        allyBase = GameObject.Find("AllyBase").GetComponent<AllyBase>();
+        enemyBase = GameObject.Find("EnemyBase").GetComponent<EnemyBase>();
+
+        GameObject.Find("Ground").GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
     }
 
     // Update is called once per frame
@@ -34,6 +47,8 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            currentLevel = 1;
+            SetCurrentLevel();
             SceneManager.LoadScene("MainMenu");
         }
     }
@@ -46,11 +61,17 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Victory!");
-        victoryText.text = $"Level {currentLevel} complete!";
+        victoryText.text = $"Victory!";
+        popupText.text = $"Level {currentLevel} complete!";
         victoryText.gameObject.SetActive(true);
         currentLevel++;
-        SetCurrentLevel();
-        LevelReset();
+        SetCurrentLevel(); 
+        Invoke(nameof(LoadPowerupScreen), 2.5f);
+    }
+
+    public void LoadPowerupScreen()
+    {
+        SceneManager.LoadScene("Powerup");
     }
 
     public void SetCurrentLevel()
@@ -73,7 +94,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Defeat!");
         victoryText.gameObject.SetActive(true);
         victoryText.text = "Defeat!";
-        SetCurrentLevel();
+        if (currentLevel > hiscore)
+        {
+            SetHiScore();
+        }
         currentLevel = 1;
         SetCurrentLevel();
         Invoke(nameof(LoadMainMenu), 4.0f);

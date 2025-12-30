@@ -7,19 +7,19 @@ public class SpawnSomething : MonoBehaviour
     public GameObject spawnMe;
     public int cost;
     public Button button;
-    public GameManager gm;
+    public GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         button = GetComponent<Button>();
-        gm = GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gm.money > cost)
+        if (gameManager.money > cost)
         {
             button.interactable = true;
         } 
@@ -31,9 +31,9 @@ public class SpawnSomething : MonoBehaviour
 
     public void SpawnClick()
     {
-        if (gm.money > cost)
+        if (gameManager.money > cost)
         {
-            gm.money -= cost;
+            gameManager.money -= cost;
             Instantiate(spawnMe, spawnPoint.position, spawnMe.transform.rotation);
         }
     }

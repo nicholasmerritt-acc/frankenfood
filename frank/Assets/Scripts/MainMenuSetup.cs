@@ -1,8 +1,7 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Fluctuate : MonoBehaviour
+public class MainMenuSetup : MonoBehaviour
 {
     public TMP_Text hiscoreText;
 
@@ -10,6 +9,8 @@ public class Fluctuate : MonoBehaviour
     void Start()
     {
         hiscoreText.text = $"Hiscore: {PlayerPrefs.GetInt("Hiscore", 0)}";
+        PlayerPrefs.SetInt("CurrentLevel", 1);
+        PlayerPrefs.SetInt("GruntDamage", 0);
     }
 
     // Update is called once per frame

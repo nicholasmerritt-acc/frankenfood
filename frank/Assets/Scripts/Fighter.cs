@@ -10,16 +10,16 @@ public class Fighter : MonoBehaviour
     public Fighter enemy;
     public bool isEnemyBase = false;
     public bool isAllyBase = false;
-    public Rigidbody rb;
-    public GameManager gm;
+    public Rigidbody rigidBody;
+    public GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("Running_b", true);
-        rb = GetComponent<Rigidbody>();
-        gm = GetComponent<GameManager>();
+        rigidBody = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -50,11 +50,11 @@ public class Fighter : MonoBehaviour
                 {
                     if (enemy.isEnemyBase)
                     {
-                        gm.Victory();
+                        gameManager.Victory();
                     }
                     else if (enemy.isAllyBase)
                     {
-                        gm.Defeat();
+                        gameManager.Defeat();
                     } else
                     {
                         Destroy(enemy.gameObject);
@@ -67,17 +67,16 @@ public class Fighter : MonoBehaviour
         else
         {
             //not fighting, so let's run
-            //transform.Translate(Vector3.right * velocity, Space.World);
-            rb.MovePosition(rb.position + (Vector3.right * velocity));
+            rigidBody.MovePosition(rigidBody.position + (Vector3.right * velocity));
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"{name} hit a {collision.gameObject.name}");
+        //Debug.Log($"{name} hit a {collision.gameObject.name}");
         if (collision.gameObject.CompareTag("Fighter") || collision.gameObject.CompareTag("Base"))
         {
-            Debug.Log($"TRUE {name} hit a {collision.gameObject.name}");
+            //Debug.Log($"{name} is fighting {collision.gameObject.name}");
             FightOn();
             enemy = collision.gameObject.GetComponent<Fighter>();
         }

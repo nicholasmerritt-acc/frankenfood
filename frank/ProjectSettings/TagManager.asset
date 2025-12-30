@@ -8,6 +8,7 @@ TagManager:
   - VictoryText
   - Base
   - Fighter
+  - PopupText
   layers:
   - Default
   - TransparentFX

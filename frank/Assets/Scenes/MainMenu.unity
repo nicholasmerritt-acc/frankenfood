@@ -547,8 +547,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hiscore: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48257413a4f5d9b4d87887c32c5d640c, type: 2}
-  m_sharedMaterial: {fileID: 7185105196476350666, guid: 48257413a4f5d9b4d87887c32c5d640c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 82b186919755df1459d3913710b1bcd3, type: 2}
+  m_sharedMaterial: {fileID: 3832294571058805806, guid: 82b186919755df1459d3913710b1bcd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -640,7 +640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -783, y: -185}
+  m_AnchoredPosition: {x: -404, y: -324}
   m_SizeDelta: {x: -1760, y: -1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &436753459

@@ -411,14 +411,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa97277644e0a64b90a053c619bdc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fighter
-  velocity: -0.2
+  velocity: -0.02
   animator: {fileID: 0}
-  health: 100
+  health: 20
   damage: 10
   enemy: {fileID: 0}
   isEnemyBase: 0
   isAllyBase: 0
-  rb: {fileID: 0}
+  rigidBody: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!65 &5586603189014994779
 BoxCollider:
   m_ObjectHideFlags: 0
