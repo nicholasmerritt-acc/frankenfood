@@ -11,6 +11,7 @@ public class Fighter : MonoBehaviour
     public bool isEnemyBase = false;
     public bool isAllyBase = false;
     public Rigidbody rb;
+    public GameManager gm;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +19,7 @@ public class Fighter : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetBool("Running_b", true);
         rb = GetComponent<Rigidbody>();
+        gm = GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -48,11 +50,11 @@ public class Fighter : MonoBehaviour
                 {
                     if (enemy.isEnemyBase)
                     {
-                        GameManager.Instance.Victory();
+                        gm.Victory();
                     }
                     else if (enemy.isAllyBase)
                     {
-                        GameManager.Instance.Defeat();
+                        gm.Defeat();
                     } else
                     {
                         Destroy(enemy.gameObject);
