@@ -3,7 +3,7 @@ using UnityEngine;
 public class AllyBase : MonoBehaviour
 {
 
-    public float startingHealth = 100f;
+    public float startingHealth = 5000f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

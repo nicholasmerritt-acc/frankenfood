@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f57a7da72359b44b94b550877767607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButtons
-  ButtonPrefab: {fileID: 2577682204375819128, guid: 630f4c59f6280df42ac8347c6eecd2ba, type: 3}
+  ButtonPrefab: {fileID: 5840475202045357612, guid: 630f4c59f6280df42ac8347c6eecd2ba, type: 3}
 --- !u!1 &1073631873
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +241,6 @@ GameObject:
   - component: {fileID: 1075359026}
   - component: {fileID: 1075359029}
   - component: {fileID: 1075359028}
-  - component: {fileID: 1075359027}
   m_Layer: 5
   m_Name: ChooseText
   m_TagString: Untagged
@@ -268,19 +267,6 @@ RectTransform:
   m_AnchoredPosition: {x: 144.2, y: 857.2}
   m_SizeDelta: {x: 800, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1075359027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075359025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f57a7da72359b44b94b550877767607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  ButtonPrefab: {fileID: 0}
 --- !u!114 &1075359028
 MonoBehaviour:
   m_ObjectHideFlags: 0

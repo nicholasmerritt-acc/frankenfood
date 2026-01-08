@@ -12,6 +12,8 @@ public class Fighter : MonoBehaviour
     public bool isAllyBase = false;
     public Rigidbody rigidBody;
     public GameManager gameManager;
+    public bool isGrunt = false;
+    public bool isBruiser = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +22,15 @@ public class Fighter : MonoBehaviour
         animator.SetBool("Running_b", true);
         rigidBody = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); GetComponent<GameManager>();
+
+        if (isGrunt)
+        {
+            damage += PlayerPrefs.GetInt("gruntDamage", 0);
+        }
+        else if (isBruiser)
+        {
+            health += PlayerPrefs.GetInt("bruiserHealth", 0);
+        }
     }
 
     // Update is called once per frame

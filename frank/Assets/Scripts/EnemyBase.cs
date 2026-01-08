@@ -4,7 +4,7 @@ public class EnemyBase : MonoBehaviour
 {
     public Transform spawnPoint;
     public GameObject spawnMe;
-    public float startSpawn = 5.0f;
+    float startSpawn = 3.0f;
     public float repeatSpawn = 5.0f;
     public float startingHealth = 100f;
 

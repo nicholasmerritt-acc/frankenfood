@@ -10,7 +10,9 @@ public class MainMenuSetup : MonoBehaviour
     {
         hiscoreText.text = $"Hiscore: {PlayerPrefs.GetInt("Hiscore", 0)}";
         PlayerPrefs.SetInt("CurrentLevel", 1);
-        PlayerPrefs.SetInt("GruntDamage", 0);
+        PlayerPrefs.SetInt("gruntDamage", 0);
+        PlayerPrefs.SetInt("bruiserHealth", 0);
+        PlayerPrefs.SetInt("farmerIncome", 0);
     }
 
     // Update is called once per frame

@@ -413,13 +413,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fighter
   velocity: -0.02
   animator: {fileID: 0}
-  health: 20
+  health: 75
   damage: 10
   enemy: {fileID: 0}
   isEnemyBase: 0
   isAllyBase: 0
   rigidBody: {fileID: 0}
   gameManager: {fileID: 0}
+  isGrunt: 0
+  isBruiser: 0
 --- !u!65 &5586603189014994779
 BoxCollider:
   m_ObjectHideFlags: 0

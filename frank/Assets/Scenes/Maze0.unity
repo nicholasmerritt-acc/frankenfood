@@ -1734,9 +1734,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   money: 100
   startingMoney: 50
-  moneyText: {fileID: 0}
-  victoryText: {fileID: 0}
-  popupText: {fileID: 0}
+  moneyText1: {fileID: 1118311764}
+  victoryText1: {fileID: 57232248}
+  popupText1: {fileID: 819178013}
+  enemyBase: {fileID: 1282212915337106387}
+  allyBase: {fileID: 1512122143}
+  ground: {fileID: 697948582}
   currentLevel: 0
   hiscore: 0
   dead: 0
@@ -1777,6 +1780,17 @@ MonoBehaviour:
   cost: 50
   button: {fileID: 0}
   gameManager: {fileID: 0}
+--- !u!114 &1118311764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5385390858099772123, guid: c9d0d5cfaa8a6dc42af3af03e2b1cff7, type: 3}
+  m_PrefabInstance: {fileID: 904321110756697947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,6 +2112,8 @@ MonoBehaviour:
   isAllyBase: 1
   rigidBody: {fileID: 0}
   gameManager: {fileID: 0}
+  isGrunt: 0
+  isBruiser: 0
 --- !u!114 &1512122143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,7 +2126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e4446301a172b4d82902627dd3bc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  startingHealth: 100
+  startingHealth: 5000
 --- !u!1 &1806805533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,6 +2822,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8883680437442491597, guid: e864686543b5c6d4ab3a2dc6a43c3787, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883680437442491597, guid: e864686543b5c6d4ab3a2dc6a43c3787, type: 3}
       propertyPath: isEnemyBase
       value: 1
       objectReference: {fileID: 0}
@@ -2836,7 +2856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   spawnPoint: {fileID: 199155411}
   spawnMe: {fileID: 4730948100546534519, guid: ea57e36d934f7a84bb5df8c4d2876b9e, type: 3}
-  startSpawn: 5
   repeatSpawn: 5
   startingHealth: 100
 --- !u!1001 &6768631068468547861
